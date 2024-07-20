@@ -9,6 +9,7 @@ import { Students } from "../../data/BdStudentes"
 import { useContext, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { StudentListContext } from "../../contexts/StudentListContext"
+import { DetailStudent } from "../DetailStudent/DetailStudent"
 
 
 
@@ -28,6 +29,9 @@ export const Studentes =()=>{
     const [filter,setFilter] = useState('')
     const [isAdd,setIsAdd] = useState(false)
     const [studentEdit,setStudentEdit] = useState([])
+    const [studentDetail,setStudentDetail] = useState([])
+
+  
 
 
     
@@ -70,7 +74,7 @@ export const Studentes =()=>{
          <Header/>
          <main  className="mt-10 px-8  pl-14">
             <div className="flex flex-col justify-center ">
-                <div className="flex items-center gap-4  m-auto mb-10">
+                <div className={`flex items-center gap-4  m-auto mb-10 ${Object.keys(studentEdit).length>0 ||Object.keys(studentDetail).length>0 ||isAdd ?"pointer-events-none":""}`}>
                     <div className="flex items-center gap-2  m-auto h-10 rounded-full p-5 transition-all duration-1000 ease-in-out group hover:w-96 hover:bg-white hover:shadow-md">
                        
                         
@@ -79,12 +83,12 @@ export const Studentes =()=>{
                             
                     </div> 
                  
-                          <div  className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white flex items-center  cursor-pointer "  onClick={()=>{setIsAdd(true)}}> <Plus size={20}/>Adicionar</div>
+                          <div  className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white flex items-center  cursor-pointer"  onClick={()=>{setIsAdd(true)}}> <Plus size={20}/>Adicionar</div>
                 </div>
 
 
                 <div className="flex   justify-center gap-8">
-                    <div className={`${isAdd?"overflow-auto lg:w-[45rem] lg:h-[30rem]":""}`} >
+                    <div className={`${Object.keys(studentEdit).length>0 ||Object.keys(studentDetail).length>0 ||isAdd ?"pointer-events-none opacity-80":""}  ${isAdd?"overflow-auto lg:w-[45rem] lg:h-[30rem]":""}`} >
                         { filter?
                     
                         
@@ -93,7 +97,7 @@ export const Studentes =()=>{
                             if( element.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())){
                                
                                 return(
-                                < ItemList  key={index} name={element.name} clickDelete={()=>handelRemove(index)} clickEdite={()=>setStudentEdit({index,id:element.id,name:element.name,description:element.description,age:element.age})} /> 
+                                < ItemList  key={index} name={element.name} clickDelete={()=>handelRemove(index)} clickEdite={()=>setStudentEdit({index,id:element.id,name:element.name,description:element.description,age:element.age})} clickDetail={()=>setStudentDetail({index,id:element.id,name:element.name,description:element.description,age:element.age})}/> 
                             )  
                         }
                             
@@ -101,7 +105,7 @@ export const Studentes =()=>{
                     
                     : studentesList.map((element,index)=>{
                             return(
-                            < ItemList  key={index} name={element.name}  clickDelete={()=>handelRemove(index)} clickEdite={()=>setStudentEdit({index,id:element.id,name:element.name,description:element.description,age:element.age})}/> 
+                            < ItemList  key={index} name={element.name}  clickDelete={()=>handelRemove(index)} clickEdite={()=>setStudentEdit({index,id:element.id,name:element.name,description:element.description,age:element.age})}    clickDetail={()=>setStudentDetail({index,id:element.id,name:element.name,description:element.description,age:element.age})} /> 
                         )
                     
                 })
@@ -188,9 +192,11 @@ export const Studentes =()=>{
 
 
                             <button type="submit" className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white mt-6 "> Editar</button> 
-                            <X className = " absolute right-2 top-2 hover:border border-black  p-2 rounded cursor-pointer" size={32} /> 
+                            <X className = " absolute right-2 top-2 hover:border border-black  p-2 rounded cursor-pointer" size={32} onClick={()=>setStudentEdit({})} /> 
                         </form>
                     </div>
+
+                    <DetailStudent style={`${Object.keys(studentDetail).length>0?"bg-white shadow pt-6 px-8 lg:max-h-[25rem] flex flex-col items-center rounded-md gap-3 relative":""}`}  name={studentDetail.name} age={studentDetail.age} description={studentDetail.description} close={()=>setStudentDetail({})}/>
 
                
                 </div>

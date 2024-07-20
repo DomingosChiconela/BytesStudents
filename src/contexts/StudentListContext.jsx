@@ -25,8 +25,6 @@ export function  StudentListContextProvider ({ children }){
         editstudent[index]=student
         SetStudentesList(editstudent)
 
-
-
     }
 
     function removeStudent(index){
@@ -34,8 +32,6 @@ export function  StudentListContextProvider ({ children }){
 
         removestudent.splice(index, 1);
         SetStudentesList(removestudent);
-
-
     }
 
 

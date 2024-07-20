@@ -70,9 +70,9 @@ export const Studentes =()=>{
 
 
     return (
-        <>
+        <div className="min-h-screen flex flex-col">
          <Header/>
-         <main  className="mt-10 px-8  pl-14">
+         <main  className="flex-grow my-10 px-8  pl-14 ">
             <div className="flex flex-col justify-center ">
                 <div className={`flex items-center gap-4  m-auto mb-10 ${Object.keys(studentEdit).length>0 ||Object.keys(studentDetail).length>0 ||isAdd ?"pointer-events-none opacity-80":""}`}>
                     <div className="flex items-center gap-2  m-auto h-10 rounded-full p-5 transition-all duration-1000 ease-in-out group hover:w-96 hover:bg-white hover:shadow-md">
@@ -83,7 +83,7 @@ export const Studentes =()=>{
                             
                     </div> 
                  
-                          <div  className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white flex items-center  cursor-pointer"  onClick={()=>{setIsAdd(true)}}> <Plus size={20}/>Adicionar</div>
+                          <div  className="py-2 px-4  bg-blue-600  hover:bg-blue-600/85 active:bg-blue-600/50  rounded-xl font-medium text-white flex items-center  cursor-pointer"  onClick={()=>{setIsAdd(true)}}> <Plus size={20}/>Adicionar</div>
                 </div>
 
 
@@ -160,7 +160,7 @@ export const Studentes =()=>{
                             </div>
 
 
-                            <button type="submit" className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white mt-6 "> Criar</button> 
+                            <button type="submit" className="py-2 px-4  bg-blue-600  hover:bg-blue-600/85 active:bg-blue-600/50  rounded-xl font-medium text-white mt-6 "> Criar</button> 
                             <X className = " absolute right-2 top-2 hover:border border-black  p-2 rounded cursor-pointer" size={32} onClick={()=>setIsAdd(!isAdd)}/>
                        
                         </form>
@@ -191,12 +191,12 @@ export const Studentes =()=>{
                             </div>
 
 
-                            <button type="submit" className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white mt-6 "> Editar</button> 
+                            <button type="submit" className="py-2 px-4  bg-blue-600  hover:bg-blue-600/85 active:bg-blue-600/50  rounded-xl font-medium text-white mt-6 "> Editar</button> 
                             <X className = " absolute right-2 top-2 hover:border border-black  p-2 rounded  cursor-pointer  shadow-lg" size={32} onClick={()=>setStudentEdit({})} /> 
                         </form>
                     </div>
 
-                    <DetailStudent style={`${Object.keys(studentDetail).length>0?"bg-zinc-900 shadow-lg pt-6 px-8 lg:max-h-[25rem] lg:w-[29rem] flex flex-col items-center rounded-md gap-3 relative":""}`}  name={studentDetail.name} age={studentDetail.age} description={studentDetail.description} close={()=>setStudentDetail({})}/>
+                    <DetailStudent style={`${Object.keys(studentDetail).length>0?"bg-zinc-900 shadow-lg py-6 px-8 lg:max-h-[25rem] lg:w-[29rem] flex flex-col items-center rounded-lg gap-3 relative":""}`}  name={studentDetail.name} age={studentDetail.age} description={studentDetail.description} close={()=>setStudentDetail({})}/>
 
                
                 </div>
@@ -209,6 +209,6 @@ export const Studentes =()=>{
         </main>
         <Footer/>
   
-        </>
+        </div>
     )
 }

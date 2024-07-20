@@ -4,7 +4,6 @@ import { Home } from "./components/pages/Home";
 
 import { Studentes } from "./components/pages/Studentes";
 import { Contact } from "./components/pages/Contact";
-import { AddStudent } from "./components/pages/AddStudent";
 
 
 
@@ -24,9 +23,5 @@ import { AddStudent } from "./components/pages/AddStudent";
         path:"/student", 
         element :<Studentes/>
     },
-    {
-        path:"/addstudent", 
-        element :<AddStudent/>
-    },
-   
+  
  ])

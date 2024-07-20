@@ -8,8 +8,8 @@ export const Header = ()=>{
     return (
         <header   className="flex   items-center px-10  h-20 bg-gradient-to-r from-indigo-500 to-blue-500 lg:justify-between font-medium">
 
-        <div className="w-24">
-            <img  className="object-cover"   src="/logo.png" alt="logo" />
+        <div className=" w-14 h-14 rounded-full bg-zinc-800">
+            <img  className="object-cover w-full h-full  "   src="/log.png" alt="logo" />
         </div>
         
          <nav  className="flex flex-col  gap-14 lg:flex-row" >

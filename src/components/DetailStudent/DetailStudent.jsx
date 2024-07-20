@@ -18,7 +18,10 @@ export const DetailStudent = ({name,age,description,style,close})=>{
                  <p className="font-bold text-blue-600 text-lg"> {name}</p>
                 <p className="font-semibold text-white text-md" >{age} Anos</p>
             </div>
-            <p  className="text-justify ">{description}</p>
+
+                <p  className="text-justify ">{description}</p>
+      
+            
 
             <X className = " absolute right-2 top-2 hover:border border-white  p-2 rounded cursor-pointer" size={32} onClick={close}/>
             

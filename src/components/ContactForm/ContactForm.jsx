@@ -103,7 +103,7 @@ const  {register,handleSubmit,formState:{errors}} =  useForm()
                 </div>
             
 
-                <button type="submit" className="py-2 px-4 bg-blue-600 rounded-xl font-medium text-white mt-6 "> Enviar</button>
+                <button type="submit" className="py-2 px-4 bg-blue-600  hover:bg-blue-600/85 active:bg-blue-600/50 rounded-xl font-medium text-white mt-6 "> Enviar</button>
     
 
 

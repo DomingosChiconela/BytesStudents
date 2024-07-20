@@ -18,7 +18,7 @@ export const  Students = [
     },
     {
         id:2, 
-        name: "Shelton",
+        name: "Shelton Duarte",
         age:23,
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, doloremque minus similique illum saepe perferendis hic magni. Commodi cumque culpa tenetur et, neque voluptate quidem beatae laborum ab est dolores?",
         createdAt: date.getFullYear(),
@@ -56,6 +56,30 @@ export const  Students = [
         id:5, 
         name: "Suel Badru",
         age:20,
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, doloremque minus similique illum saepe perferendis hic magni. Commodi cumque culpa tenetur et, neque voluptate quidem beatae laborum ab est dolores?",
+        createdAt: date.getFullYear(),
+        updatedAt: date.getFullYear(),
+
+        
+
+
+    },
+    {
+        id:6, 
+        name: "Simao ",
+        age:22,
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, doloremque minus similique illum saepe perferendis hic magni. Commodi cumque culpa tenetur et, neque voluptate quidem beatae laborum ab est dolores?",
+        createdAt: date.getFullYear(),
+        updatedAt: date.getFullYear(),
+
+        
+
+
+    },
+    {
+        id:7, 
+        name: "Ricardina",
+        age:22,
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, doloremque minus similique illum saepe perferendis hic magni. Commodi cumque culpa tenetur et, neque voluptate quidem beatae laborum ab est dolores?",
         createdAt: date.getFullYear(),
         updatedAt: date.getFullYear(),

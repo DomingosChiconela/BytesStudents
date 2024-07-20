@@ -10,13 +10,13 @@ export const Contact = ()=>{
 
 
     return (
-        <>
-         <Header/>
-         <main className="mt-8">
-        <ContactForm/>
-         </main>
-         <Footer/>
-      
-        </>
+        <div className="min-h-screen flex flex-col">
+            <Header/>
+            <main className=" flex-grow   mt-10 mb-14">
+            <ContactForm/>
+            </main>
+            <Footer/>
+        </div>
+        
     )
 }
